@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Coupons - Dip & Sip</title>
+    <meta name="description" content="Purchase coupons for delicious treats at Dip & Sip stall">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.png">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Coupon-specific styles */
+        .coupons {
+            padding: 8rem 1rem 5rem;
+            background-color: var(--light-color);
+        }
+
+        .coupons__container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .coupon-card {
+            background: var(--bg-color);
+            border-radius: 25px;
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 15px 35px var(--shadow-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(139, 69, 19, 0.1);
+        }
+
+        .coupon-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px var(--shadow-color);
+        }
+
+        .coupon-card__image {
+            width: 100%;
+            height: 200px;
+            border-radius: 20px;
+            object-fit: contain;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            background-color: var(--light-color);
+            padding: 1rem;
+        }
+
+        .coupon-card__title {
+            font-family: 'Cinzel Decorative', 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--dark-color);
+            margin-bottom: 1rem;
+        }
+
+        .coupon-card__price {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.4rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .coupon-card__description {
+            color: var(--text-color);
+            margin-bottom: 2rem;
+            max-width: 600px;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .coupon-card__features {
+            list-style: none;
+            margin-bottom: 2rem;
+            text-align: left;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .coupon-card__features li {
+            margin-bottom: 1rem;
+            padding-left: 2rem;
+            position: relative;
+            font-size: 1.1rem;
+        }
+
+        .coupon-card__features li::before {
+            content: "✓";
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .btn--coupon {
+            background: var(--gradient-primary);
+            color: var(--light-color);
+            padding: 1.2rem 3rem;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .btn--coupon:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px var(--shadow-color);
+        }
+
+        .lucky-draw {
+            background: var(--gradient-primary);
+            border-radius: 25px;
+            padding: 3rem;
+            text-align: center;
+            margin-top: 5rem;
+            box-shadow: 0 10px 30px var(--shadow-color);
+        }
+
+        .lucky-draw__content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .lucky-draw__title {
+            font-family: 'Cinzel Decorative', 'Playfair Display', serif;
+            font-size: 2.4rem;
+            color: var(--light-color);
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .lucky-draw__text {
+            font-size: 1.2rem;
+            color: var(--light-color);
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+
+        .lucky-draw__prize {
+            font-size: 1.6rem;
+            color: var(--accent-color);
+            font-weight: 600;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+            margin-bottom: 2rem;
+        }
+
+        .lucky-draw__features {
+            list-style: none;
+            text-align: left;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .lucky-draw__features li {
+            color: var(--light-color);
+            margin-bottom: 1rem;
+            padding-left: 2rem;
+            position: relative;
+            font-size: 1.1rem;
+        }
+
+        .lucky-draw__features li::before {
+            content: "🎁";
+            position: absolute;
+            left: 0;
+        }
+
+        @media (max-width: 768px) {
+            .coupon-card {
+                padding: 2rem;
+            }
+
+            .coupon-card__image {
+                height: 150px;
+            }
+
+            .coupon-card__title {
+                font-size: 1.8rem;
+            }
+
+            .coupon-card__price {
+                font-size: 2rem;
+            }
+
+            .lucky-draw {
+                padding: 2rem;
+            }
+
+            .lucky-draw__title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav__logo">
+                <h1>Dip & Sip</h1>
+            </div>
+            <div class="nav__menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="../index.html" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="coupons.html" class="nav__link active">Buy Coupons</a></li>
+                    <li class="nav__item"><a href="menu.html" class="nav__link">Menu</a></li>
+                    <li class="nav__item"><a href="about.html" class="nav__link">About</a></li>
+                </ul>
+            </div>
+            <div class="nav__toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Coupons Section -->
+    <section class="coupons">
+        <div class="coupons__container">
+            <h2 class="section__title">Special Coupon Packages</h2>
+            <p class="section__subtitle">Buy Coupons & Get Lucky Draw Entry!</p>
+            
+            <!-- Gola Special Combo -->
+            <div class="coupon-card">
+                <img src="../images/gola-combo.jpg" alt="Gola Special Combo" class="coupon-card__image">
+                <h3 class="coupon-card__title">Gola Special Combo</h3>
+                <p class="coupon-card__price">₹80</p>
+                <p class="coupon-card__description">
+                    Get a refreshing combination of our signature Golas with unique shapes and flavors!
+                </p>
+                <ul class="coupon-card__features">
+                    <li>1 Mango Shape Gola</li>
+                    <li>1 Little Heart Gola</li>
+                    <li>Choice of flavors</li>
+                    <li>Valid during the entire expo</li>
+                    <li>Lucky Draw Entry Included</li>
+                </ul>
+                <a href="https://forms.gle/TTKRhASJMbY7hep38" class="btn btn--coupon" target="_blank">Buy Now</a>
+            </div>
+
+            <!-- Chocolate Delight Combo -->
+            <div class="coupon-card">
+                <img src="../images/choco-combo.jpg" alt="Chocolate Delight Combo" class="coupon-card__image">
+                <h3 class="coupon-card__title">Chocolate Delight Combo</h3>
+                <p class="coupon-card__price">₹100</p>
+                <p class="coupon-card__description">
+                    Indulge in our premium chocolate combinations with both classic and special variations!
+                </p>
+                <ul class="coupon-card__features">
+                    <li>1 Normal ChocoDip</li>
+                    <li>1 Special ChocoDip</li>
+                    <li>Premium toppings included</li>
+                    <li>Valid during the entire expo</li>
+                    <li>Lucky Draw Entry Included</li>
+                </ul>
+                <a href="https://forms.gle/78UKDCYGoDADHW5D6" class="btn btn--coupon" target="_blank">Buy Now</a>
+            </div>
+
+            <!-- Heart Special Combo -->
+            <div class="coupon-card">
+                <img src="../images/heart-combo.jpg" alt="Heart Special Combo" class="coupon-card__image">
+                <h3 class="coupon-card__title">Heart Special Combo</h3>
+                <p class="coupon-card__price">₹110</p>
+                <p class="coupon-card__description">
+                    Experience our most p   opular combination with a big heart gola and special chocolate dip!
+                </p>
+                <ul class="coupon-card__features">
+                    <li>1 Big Heart Gola</li>
+                    <li>1 Special ChocoDip</li>
+                    <li>Premium toppings included</li>
+                    <li>Valid during the entire expo</li>
+                    <li>Lucky Draw Entry Included</li>
+                </ul>
+                <a href="https://forms.gle/4mPx4fJR9AstyXYQ8" class="btn btn--coupon" target="_blank">Buy Now</a>
+            </div>
+
+            <!-- Lucky Draw Section -->
+            <div class="lucky-draw">
+                <div class="lucky-draw__content">
+                    <h4 class="lucky-draw__title">Lucky Draw Event 🎉</h4>
+                    <p class="lucky-draw__text">Every coupon purchase automatically enters you into our lucky draw!</p>
+                    <p class="lucky-draw__prize">Win Exciting Cash Prizes!</p>
+                    <ul class="lucky-draw__features">
+                        
+                        <li>Draw will be held at the end of the expo</li>
+                        <li>Winners will be announced on our social media</li>
+                        <li>Prizes can be claimed at the stall</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer__content">
+            <div class="footer__section">
+                <h3 class="footer__title">Contact Us</h3>
+                <p class="footer__text">Location: RGMCET College Expo</p>
+                <p class="footer__text">Phone: 7670867091</p>
+                <p class="footer__text">Email: nanimekala987@gmail.com</p>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <p>Developed by students of CSE(Data Science) with love</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../js/main.js"></script>
+</body>
+</html> 

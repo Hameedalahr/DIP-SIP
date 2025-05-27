@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Dip & Sip</title>
+    <meta name="description" content="Explore our delicious menu at Dip & Sip">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.png   ">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Menu-specific styles */
+        .menu {
+            padding: 8rem 1rem 5rem;
+            background-color: var(--light-color);
+        }
+
+        .menu__container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .menu__category {
+            margin-bottom: 4rem;
+            background: var(--bg-color);
+            border-radius: 25px;
+            padding: 2.5rem;
+            box-shadow: 0 15px 35px var(--shadow-color);
+        }
+
+        .menu__category-title {
+            font-family: 'Cinzel Decorative', 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+            text-align: center;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        .menu__items {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .menu__item {
+            display: flex;
+            flex-direction: column;
+            padding: 1.5rem;
+            border-radius: 15px;
+            background: var(--light-color);
+            transition: all 0.3s ease;
+        }
+
+        .menu__item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px var(--shadow-color);
+        }
+
+        .menu__item-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.8rem;
+        }
+
+        .menu__item-title {
+            font-size: 1.2rem;
+            color: var(--dark-color);
+            font-weight: 600;
+        }
+
+        .menu__item-price {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        .menu__item-description {
+            font-size: 0.95rem;
+            color: var(--text-color);
+            line-height: 1.4;
+            opacity: 0.9;
+        }
+
+        .menu__combo {
+            background: var(--gradient-primary);
+            color: var(--light-color);
+            padding: 2rem;
+            border-radius: 20px;
+            margin-top: 3rem;
+            text-align: center;
+        }
+
+        .menu__combo-title {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            font-family: 'Cinzel Decorative', 'Playfair Display', serif;
+        }
+
+        .menu__combo-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .menu__combo-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 15px;
+            backdrop-filter: blur(5px);
+        }
+
+        @media (max-width: 768px) {
+            .menu__category {
+                padding: 2rem;
+            }
+
+            .menu__category-title {
+                font-size: 1.8rem;
+            }
+
+            .menu__items {
+                grid-template-columns: 1fr;
+            }
+
+            .menu__item {
+                padding: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav__logo">
+                <a href="../index.html" class="nav__logo-link">
+                    <h1>Dip & Sip</h1>
+                </a>
+            </div>
+            <div class="nav__menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="../index.html" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="coupons.html" class="nav__link">Buy Coupons</a></li>
+                    <li class="nav__item"><a href="menu.html" class="nav__link active">Menu</a></li>
+                    <li class="nav__item"><a href="about.html" class="nav__link">About</a></li>
+                </ul>
+            </div>
+            <div class="nav__toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Menu Section -->
+    <section class="menu">
+        <div class="menu__container">
+            <h2 class="section__title">Our Menu</h2>
+            <p class="section__subtitle">Fresh & Premium Ice Treats</p>
+
+            <!-- Bombay Gola Category -->
+            <div class="menu__category">
+                <h3 class="menu__category-title">Bombay Gola</h3>
+                <div class="menu__items">
+                    <div class="menu__item">
+                        <div class="menu__item-info">
+                            <h4 class="menu__item-title">Bombay Gola Ice</h4>
+                            <p class="menu__item-price">₹40/-</p>
+                        </div>
+                        <p class="menu__item-description">Classic Mumbai-style ice gola with your choice of flavors. Perfect blend of sweet and tangy tastes.</p>
+                    </div>
+                    <div class="menu__item">
+                        <div class="menu__item-info">
+                            <h4 class="menu__item-title">Leaf Shaped Gola Ice</h4>
+                            <p class="menu__item-price">₹40/-</p>
+                        </div>
+                        <p class="menu__item-description">Uniquely crafted leaf-shaped ice gola. A refreshing treat with artistic presentation.</p>
+                    </div>
+                    <div class="menu__item">
+                        <div class="menu__item-info">
+                            <h4 class="menu__item-title">Mango Shaped Gola Ice</h4>
+                            <p class="menu__item-price">₹40/-</p>
+                        </div>
+                        <p class="menu__item-description">Mango-shaped ice gola with real mango flavor. A tropical delight for mango lovers.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Special Gola Category -->
+            <div class="menu__category">
+                <h3 class="menu__category-title">Special Gola</h3>
+                <div class="menu__items">
+                    <div class="menu__item">
+                        <div class="menu__item-info">
+                            <h4 class="menu__item-title">Little Heart Gola</h4>
+                            <p class="menu__item-price">₹50/-</p>
+                        </div>
+                        <p class="menu__item-description">Heart-shaped ice gola with special rose flavor. Perfect for sharing with someone special.</p>
+                    </div>
+                    <div class="menu__item">
+                        <div class="menu__item-info">
+                            <h4 class="menu__item-title">Cone Shaped Gola</h4>
+                            <p class="menu__item-price">₹50/-</p>
+                        </div>
+                        <p class="menu__item-description">Ice cream cone style gola with premium flavors. A unique twist on traditional ice gola.</p>
+                    </div>
+                    <div class="menu__item">
+                        <div class="menu__item-info">
+                            <h4 class="menu__item-title">Love Shaped Gola</h4>
+                            <p class="menu__item-price">₹60/-</p>
+                        </div>
+                        <p class="menu__item-description">Large heart-shaped premium gola with special toppings. Our most romantic offering.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chocolate Dips Category -->
+            <div class="menu__category">
+                <h3 class="menu__category-title">Chocolate Dips</h3>
+                <div class="menu__items">
+                    <div class="menu__item">
+                        <div class="menu__item-info">
+                            <h4 class="menu__item-title">Normal ChocoDip</h4>
+                            <p class="menu__item-price">₹40/-</p>
+                        </div>
+                        <p class="menu__item-description">Classic chocolate-dipped ice cream with rich cocoa coating. A timeless favorite.</p>
+                    </div>
+                    <div class="menu__item">
+                        <div class="menu__item-info">
+                            <h4 class="menu__item-title">Special ChocoDip</h4>
+                            <p class="menu__item-price">₹70/-</p>
+                        </div>
+                        <p class="menu__item-description">Premium chocolate dip with special toppings and premium Belgian chocolate coating.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Combo's Menu Category -->
+            <div class="menu__category">
+                <h3 class="menu__category-title">Combo's Menu</h3>
+                <div class="menu__items">
+                    <div class="menu__item">
+                        <div class="menu__item-info">
+                            <h4 class="menu__item-title">2 Bombay Gola</h4>
+                            <p class="menu__item-price">₹60/-</p>
+                        </div>
+                        <p class="menu__item-description">Perfect sharing combo with two classic Bombay golas. Save ₹20 on this combo!</p>
+                    </div>
+                    <div class="menu__item">
+                        <div class="menu__item-info">
+                            <h4 class="menu__item-title">1 Little & 1 Big Heart</h4>
+                            <p class="menu__item-price">₹90/-</p>
+                        </div>
+                        <p class="menu__item-description">Romantic combo featuring both sizes of our heart-shaped golas. Best for couples!</p>
+                    </div>
+                    <div class="menu__item">
+                        <div class="menu__item-info">
+                            <h4 class="menu__item-title">1 Cone & 1 Big Heart</h4>
+                            <p class="menu__item-price">₹100/-</p>
+                        </div>
+                        <p class="menu__item-description">Premium combo with our special cone gola and big heart gola. Perfect mix of flavors!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer__content">
+            <div class="footer__section">
+                <h3 class="footer__title">Contact Us</h3>
+                <p class="footer__text">Location: RGMCET College Expo</p>
+                <p class="footer__text">Phone: 7670867091</p>
+                <p class="footer__text">Email: nanimekala987@gmail.com</p>
+            </div>
+            <div class="footer__section">
+                <h3 class="footer__title">Social Media Partners</h3>
+                <div class="footer__partners">
+                    <a href="https://www.instagram.com/weeknd_gadu" target="_blank" class="partner__link">
+                        <img src="../images/weeknd_gadu.jpg" alt="weeknd_gadu" class="partner__image">
+                        <p class="partner__name">weeknd_gadu</p>
+                    </a>
+                    <a href="https://www.instagram.com/tfi_bagundalii" target="_blank" class="partner__link">
+                        <img src="../images/tfi_bagundalii.jpg" alt="tfi_bagundalii" class="partner__image">
+                        <p class="partner__name">tfi_bagundalii</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <p>Developed by students of CSE(Data Science) with love</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../js/main.js"></script>
+</body>
+</html> 
